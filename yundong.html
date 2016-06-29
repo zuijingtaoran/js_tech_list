@@ -1,0 +1,262 @@
+
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>RunJS</title>
+	</head>
+	<body>
+		<a href="/" class="trans">经过我~~</a>
+		
+		
+		<a href="/" class="trans_effect">摸我！</a>
+		<div id="transBox" class="trans_box">
+    <div class="trans_list ease">ease</div>
+    <div class="trans_list ease_in">ease-in</div>
+    <div class="trans_list ease_out">ease-out</div>
+    <div class="trans_list ease_in_out">ease-in-out</div>
+    <div class="trans_list linear">linear</div>
+</div>
+		
+		
+		<div class="anim_box test_box"></div>
+		
+		<img class="anim_image" src="http://image.zhangxinxu.com/image/study/head/s180/14.jpeg" />
+		<h1>图片淡入淡出 hover</h1>
+		<div><img class="anim_fade_opactity_image" src="http://image.zhangxinxu.com/image/study/p/s200/ps6.jpg" /><img src="http://image.zhangxinxu.com/image/study/p/s200/ps4.jpg"/>
+	
+<div>
+		<h1>一直不断的图片淡入淡出 hover</h1>
+	<div><img class="anim_fade_image" src="http://image.zhangxinxu.com/image/study/p/s200/ps6.jpg" /><img src="http://image.zhangxinxu.com/image/study/p/s200/ps4.jpg"/>
+	
+<div>
+	<h1>：图片轮转缩放显示动画</h1>
+	
+	<div id="testBox" class="demo anim_box">
+    <img class="anim_image_02 anim_image_top" src="http://image.zhangxinxu.com/image/study/p/s200/ps6.jpg" />
+    <img class="anim_image_02 anim_image_bottom" src="http://image.zhangxinxu.com/image/study/p/s200/ps4.jpg" />
+</div>
+
+	</body>
+</html>
+    	<style>.trans {
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+	
+}
+.trans:hover {
+    background-color: #486AAA;
+    color: #fff;
+}
+
+.trans_effect {
+    display:block;
+    line-height:100px;
+    width:100px;
+    background:#beceeb;
+    margin:30px auto;
+    text-align:center;
+    -webkit-transition:all 2s ease-in-out;
+    -moz-transition:all 2s ease-in-out;
+    -o-transition:all 2s ease-in-out;
+    -ms-transition:all 2s ease-in-out;    
+    transition:all 2s ease-in-out;
+}
+.trans_effect:hover {
+    -webkit-transform:rotate(720deg) scale(2,2);
+    -moz-transform:rotate(720deg) scale(2,2);
+    -o-transform:rotate(720deg) scale(2,2);
+    -ms-transform:rotate(720deg) scale(2,2);
+    transform:rotate(720deg) scale(2,2);        
+}
+
+.trans_box {
+    padding: 20px;
+	background-color: #f0f3f9;
+	*zoom:1;
+}
+.trans_list {
+	width: 10%;
+	height: 64px;
+	margin:10px 0;
+	background-color:#486AAA;
+	color:#fff;
+	text-align:center;
+}
+.ease {
+	-webkit-transition: all 4s ease;
+	-moz-transition: all 4s ease;
+	-o-transition: all 4s ease;
+	transition: all 4s ease;
+}
+.ease_in {
+	-webkit-transition: all 4s ease-in;
+	-moz-transition: all 4s ease-in;
+	-o-transition: all 4s ease-in;
+	transition: all 4s ease-in;
+}
+.ease_out {
+	-webkit-transition: all 4s ease-out;
+	-moz-transition: all 4s ease-out;
+	-o-transition: all 4s ease-out;
+	transition: all 4s ease-out;
+}
+.ease_in_out {
+	-webkit-transition: all 4s ease-in-out;
+	-moz-transition: all 4s ease-in-out;
+	-o-transition: all 4s ease-in-out;
+	transition: all 4s ease-in-out;
+}
+.linear {
+	-webkit-transition: all 4s linear;
+	-moz-transition: all 4s linear;
+	-o-transition: all 4s linear;
+	transition: all 4s linear;
+}
+.trans_box:hover .trans_list, .trans_box_hover .trans_list {
+	margin-left:89%;
+	background-color:#beceeb;
+	color:#333;
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	-o-border-radius:25px;
+	border-radius:25px;		
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	transform: rotate(360deg);				
+}
+
+
+@-webkit-keyframes resize {
+	0% {
+		padding: 0;
+	}
+	50% {
+		padding: 0 20px;
+		background-color:rgba(190, 206, 235, 0.2);		
+	}
+	100% {
+		padding: 0 100px;
+		background-color:rgba(190, 206, 235, 0.9);
+	}
+}
+.test_box {
+	width:100px;
+	height:100px;
+	border:1px solid #beceeb;
+	background-color:#f0f3f9;
+	margin:40px auto;
+}
+.anim_box:hover {
+	-webkit-animation-name: resize;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: 4;
+	-webkit-animation-direction: alternate;  /*方向：第偶数次向前播放，第奇数次向反方向播放。、*/
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+
+
+
+@-webkit-keyframes glow {
+	0% {
+		-webkit-box-shadow: 0 0 12px rgba(72, 106, 170, 0.5);
+		border-color: rgba(160, 179, 214, 0.5); 		
+	}
+	100% {
+		-webkit-box-shadow: 0 0 12px rgba(72, 106, 170, 1.0), 0 0 18px rgba(0, 140, 255, 1.0);
+		border-color: rgba(160, 179, 214, 1.0); 
+	}
+}
+.anim_image {
+	padding:3px;
+	border:1px solid #beceeb;
+	background-color:white;
+	-moz-box-shadow: 0 0 8px rgba(72, 106, 170, 0.5);
+	-webkit-box-shadow: 0 0 8px rgba(72, 106, 170, 0.5);
+	box-shadow: 0 0 8px rgba(72, 106, 170, 0.5);
+}
+.anim_image:hover {
+	background-color:#f0f3f9;
+	-webkit-animation-name: glow;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: ease-in-out;	
+}
+
+
+.anim_fade_opactity_image {
+	position:absolute;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+}
+.anim_fade_opactity_image:hover{
+	opacity:0;
+	filter: alpha(opacity=0);
+}
+
+
+@-webkit-keyframes fadeInOut {
+    0% {
+        opacity:1;
+     }
+    25% {
+        opacity:0;
+    }
+    50% {
+        opacity: 0;    
+    }
+    75% {
+        opacity:1;
+    }
+}
+.anim_fade_image {
+    position:absolute;    
+    -webkit-animation-name: fadeInOut;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+    -webkit-animation-direction: alternate;
+}
+
+
+.anim_box{
+	width:200px;
+	cursor:pointer;
+}
+.anim_image_02 {
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+.anim_image_top {
+	position: absolute;
+	-webkit-transform: scale(0, 0);
+	opacity: 0;
+	filter: Alpha(opacity=0);
+}
+.anim_box:hover .anim_image_top , .anim_box_hover .anim_image_top {
+	opacity: 1;
+	filter: Alpha(opacity=100);
+	-webkit-transform: scale(1, 1);
+	-webkit-transform-origin: top right;		
+}
+.anim_box:hover .anim_image_bottom, .anim_box_hover .anim_image_bottom {
+	-webkit-transform: scale(0, 0);
+	-webkit-transform-origin: bottom left;
+}</style>
+	    		<script>/*
+ease : '越来越慢',
+ease-in:'先慢后快',
+ease-out:'先快后慢',
+ease-in-out:'先慢再快再慢'
+
+*/</script>
+	
+<!-- Generated by RunJS (Mon Jun 06 09:44:09 CST 2016) 1ms -->

@@ -1,0 +1,397 @@
+
+	<!DOCTYPE html>
+<html>
+  <head>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+	<meta charset="utf-8">
+	<title>test</title>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	</head>
+  <body>
+		<div id="sl1" class="slidout">
+			<div class="slider" id="s1">
+				<span class="grad" id="g1"></span>
+			</div>
+		</div>
+		<div id="sl2" class="slidout">
+			<div class="slider" id="s2">
+				<span class="grad" id="g2"></span>
+			</div>
+		</div>
+		<div id="sl3" class="slidout">
+			<div class="slider" id="s3">
+				<span class="grad" id="g3"></span>
+			</div>
+		</div>
+
+	<div id="first_wel">
+		<div class="ft" id="ft1">
+			<ul class="til">
+				<li id="title1"></li>
+				<li>welcome to here</li>
+			</ul>
+		</div>
+		<div class="ft" id="ft2">
+			<div class="til">这块的切换我觉得挺有意思的</div>
+		</div>
+		<div class="ft" id="ft3">
+			<div class="til">简单的说其实就是js控制css旋转、渐变</div>
+		</div>
+	</div>
+	<div id="vertical">
+		<div class="vert" id="v1">
+			<div class="text">
+				这块按自己的想法，布局就好，<br />原网站弄的网格。随个人喜好吧。
+			</div>
+		</div>
+		<div class="vert" id="v2">
+			<div class="text">这块也是随便弄，就随便放想放的东西</div>
+		</div>
+		<div class="vert" id="v3">
+			<div class="text">
+				<span>THANK YOU FOR WATCHING</span>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>
+    	<style>*{margin:0;padding:0;list-style:none;}
+		.slidout{
+			overflow: hidden;
+			position: fixed;
+			width: 200%;
+			left: -50%;
+			top: -150%;
+			height: 250%;
+			transform-origin: center bottom 0px;
+		}
+		#sl1{z-index: 100;}#sl2{z-index: 80;}#sl3{z-index: 60;}
+		.slider{
+			content: "";
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: #AAA;
+			background-repeat: no-repeat;
+			background-position: center bottom;
+			background-size: 50% auto;
+			transform-origin: center bottom 0px;
+		}
+		#s1{z-index: 99;background-image: url("http://pic4.bbzhi.com/zhiwubizhi/baohuyanjingxinyanenyebizhi/baohuyanjingxinyanenyebizhi_353060_10.jpg");}
+		#s2{z-index: 79;background-image: url("http://d.3987.com/jianying_140912/001.jpg");}
+		#s3{
+			z-index: 59;			
+			background-image: url("http://d.3987.com/weim_150131/001.jpg");
+			background-size: 50% auto;
+		}
+		.grad{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(189, 189, 189, 0) 100%);
+		}
+		#first_wel{
+			top: 30%;
+			margin-top: -150px;
+			width: 500%;
+			height: 500px;
+			left: 0px;
+			position: fixed;
+			z-index: 200;
+		}
+		.ft{
+			font-family: "Tulpen One",cursive;
+			font-size: 330px;
+			color: #47B4AC;
+			width: 20%;
+			height: 500px;
+			bottom: 30%;
+			position: absolute;
+			text-align: center;
+		}
+		.ft div{display:black;text-align:center;}
+		#ft1{left:0%;}#ft2{left:20%;}#ft3{left:40%;}
+		.til{
+			width: 800px;
+			height: 45px;
+			position: absolute;
+			top: 320px;
+			font-size: 3rem;
+			font-family: "Yanone Kaffeesatz",sans-serif;
+			left: 50%;
+			margin-left: -400px;
+			letter-spacing: 5px;
+			z-index: 800;
+		}
+	
+		#vertical {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+		}
+		.vert {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			overflow: hidden;
+			background-image:url("http://image.tianjimedia.com/uploadImages/2012/115/XCSA5L6M342L.jpg");
+			background-attachment: fixed;
+		}
+		.vert div{
+			width:80%;
+			height:80%;
+			top:10%;
+			left:10%;
+			text-align:center;
+			position:absolute;
+			background-color:rgba(224,156,178,0.3);
+		}
+		#v1{
+			top:0%;
+		}
+		#v2{
+			top:100%;			
+			}
+		#v3{
+			top:200%;		
+		}
+		#v3 span{
+			position:absolute;
+			top:40%;
+			left:30%;
+		}
+		.text{
+			font-size:3rem;
+			line-height:4rem;
+		}</style>
+	    		<script>$(document).ready(function () {
+	var wid=window.innerWidth;
+	var hei=window.innerHeight;
+	
+	var a1 = 0;
+	var a2 = 0.9;
+
+	var d = new Date();
+	var month = d.getMonth()+1;
+	if(month<10){month = '0'+month;}
+	var day = d.getDate();
+	if(day<10){day = '0'+day;}
+	var year = d.getFullYear();
+
+	$('#title1').append(month+'.'+day+'.'+year);
+
+	$('#scroll').click(function(){    
+		$("body,html").animate({scrollTop:1800}, 2500, 'easeInOutQuad' );  
+	});
+
+	$('#g1').css('background-image','-webkit-gradient(linear,left top,left bottom,color-stop(1, rgba(85,48,66,'+a1+')),color-stop(0, rgba(255,255,255,'+a2+')))');
+    $('#g1').css('background-image','-o-linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+    $('#g1').css('background-image','-moz-linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+    $('#g1').css('background-image','-ms-linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+    $('#g1').css('background-image','-webkit-linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+    $('#g1').css('background-image','linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+    
+	$('body').css('height',hei+9000+'px');
+	$("body").css('overflow','auto');
+
+	$(window).scroll(function() {
+		deg = $(window).scrollTop() / 10;
+		degz = deg * -1;
+		deg2 = deg-180;
+		degz2 = deg2 * -1;
+		deg3 = deg2-180;
+		degz3 = deg3 * -1;
+		deg4 = deg3-180;
+		degz4 = deg4 * -1;
+
+
+		roll = (0.555555555555556) * deg * -1 ;
+		rollver = (0.555555555555556) * deg4 * -1 ;
+		$('#first_wel').css('left',+roll+'%');
+		console.log('roll: '+roll);
+
+		if(deg4<0){
+			$('#vertical').css('top','0%');
+		}
+    
+		if(deg4>0){
+			$('#vertical').css('top',+rollver+'%');
+			console.log('rollver: '+rollver);
+		}
+
+		a2 = 0.9 - 0.012166 * deg ;
+		a1 = 0.005 * deg ;
+    
+		a4 = 0.9 - 0.012166 * (deg2) ;
+		a3 = 0.005 * (deg2) ;
+    
+		a6 = 0.9 - 0.012166 * (deg3) ;
+		a5 = 0.005 * (deg3) ;
+		
+		sz = 50 + (deg/20); 
+
+		$('#g1').css('background-image','-webkit-gradient(linear,left top,left bottom,color-stop(1, rgba(85,48,66,'+a1+')),color-stop(0, rgba(255,255,255,'+a2+')))');
+		$('#g1').css('background-image','-o-linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+		$('#g1').css('background-image','-moz-linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+		$('#g1').css('background-image','-ms-linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+		$('#g1').css('background-image','-webkit-linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+		$('#g1').css('background-image','linear-gradient(bottom, rgba(85,48,66,'+a1+') 0%, rgba(255,255,255,'+a2+') 100%)');
+    
+		$('#g2').css('background-image','-webkit-gradient(linear,left top,left bottom,color-stop(1, rgba(85,48,66,'+a1+')),color-stop(0, rgba(255,255,255,'+a2+')))');
+		$('#g2').css('background-image','-o-linear-gradient(bottom, rgba(85,48,66,'+a3+') 0%, rgba(255,255,255,'+a4+') 100%)');
+		$('#g2').css('background-image','-moz-linear-gradient(bottom, rgba(85,48,66,'+a3+') 0%, rgba(255,255,255,'+a4+') 100%)');
+		$('#g2').css('background-image','-ms-linear-gradient(bottom, rgba(85,48,66,'+a3+') 0%, rgba(255,255,255,'+a4+') 100%)');
+		$('#g2').css('background-image','-webkit-linear-gradient(bottom, rgba(85,48,66,'+a3+') 0%, rgba(255,255,255,'+a4+') 100%)');
+		$('#g2').css('background-image','linear-gradient(bottom, rgba(85,48,66,'+a3+') 0%, rgba(255,255,255,'+a4+') 100%)');
+    
+		$('#g3').css('background-image','-webkit-gradient(linear,left top,left bottom,color-stop(1, rgba(85,48,66,'+a1+')),color-stop(0, rgba(255,255,255,'+a2+')))');
+		$('#g3').css('background-image','-o-linear-gradient(bottom, rgba(85,48,66,'+a5+') 0%, rgba(255,255,255,'+a6+') 100%)');
+		$('#g3').css('background-image','-moz-linear-gradient(bottom, rgba(85,48,66,'+a5+') 0%, rgba(255,255,255,'+a6+') 100%)');
+		$('#g3').css('background-image','-ms-linear-gradient(bottom, rgba(85,48,66,'+a5+') 0%, rgba(255,255,255,'+a6+') 100%)');
+		$('#g3').css('background-image','-webkit-linear-gradient(bottom, rgba(85,48,66,'+a5+') 25%, rgba(255,255,255,'+a6+') 100%)');
+		$('#g3').css('background-image','linear-gradient(bottom, rgba(85,48,66,'+a5+') 0%, rgba(255,255,255,'+a6+') 100%)');
+		
+		if(deg<180){        
+			rotate1();
+			$('#s1').css('background-size',''+sz+'%');
+			$('#s2').css('-webkit-transform', 'rotate(0deg)');
+			$('#s2').css('-moz-transform', 'rotate(0deg)');
+			$('#s2').css('-o-transform', 'rotate(0deg)');
+			$('#s2').css('-ms-transform', 'rotate(0deg)');
+			$('#sl2').css('-webkit-transform', 'rotate(0deg)');
+			$('#sl2').css('-moz-transform', 'rotate(0deg)');
+			$('#sl2').css('-o-transform', 'rotate(0deg)');
+			$('#sl2').css('-ms-transform', 'rotate(0deg)');
+        
+			$('#s3').css('-webkit-transform', 'rotate(0deg)');
+			$('#s3').css('-moz-transform', 'rotate(0deg)');
+			$('#s3').css('-o-transform', 'rotate(0deg)');
+			$('#s3').css('-ms-transform', 'rotate(0deg)');
+			$('#sl3').css('-webkit-transform', 'rotate(0deg)');
+			$('#sl3').css('-moz-transform', 'rotate(0deg)');
+			$('#sl3').css('-o-transform', 'rotate(0deg)');
+			$('#sl3').css('-ms-transform', 'rotate(0deg)');
+			
+		}
+		if(deg>180 && deg<360){
+                
+			$('#s1').css('-webkit-transform', 'rotate(-180deg)');
+			$('#s1').css('-moz-transform', 'rotate(-180deg)');
+			$('#s1').css('-o-transform', 'rotate(-180deg)');
+			$('#s1').css('-ms-transform', 'rotate(-180deg)');
+			$('#sl1').css('-webkit-transform', 'rotate(-180deg)');
+			$('#sl1').css('-moz-transform', 'rotate(-180deg)');
+			$('#sl1').css('-o-transform', 'rotate(-180deg)');
+			$('#sl1').css('-ms-transform', 'rotate(-180deg)');
+			
+			rotate2();
+			$('#s3').css('-webkit-transform', 'rotate(0deg)');
+			$('#s3').css('-moz-transform', 'rotate(0deg)');
+			$('#s3').css('-o-transform', 'rotate(0deg)');
+			$('#s3').css('-ms-transform', 'rotate(0deg)');
+			$('#sl3').css('-webkit-transform', 'rotate(0deg)');
+			$('#sl3').css('-moz-transform', 'rotate(0deg)');
+			$('#sl3').css('-o-transform', 'rotate(0deg)');
+			$('#sl3').css('-ms-transform', 'rotate(0deg)');
+			
+        }
+		if(deg>360 && deg<540){
+
+			$('#s1').css('-webkit-transform', 'rotate(-180deg)');
+			$('#s1').css('-moz-transform', 'rotate(-180deg)');
+			$('#s1').css('-o-transform', 'rotate(-180deg)');
+			$('#s1').css('-ms-transform', 'rotate(-180deg)');
+			$('#sl1').css('-webkit-transform', 'rotate(-180deg)');
+			$('#sl1').css('-moz-transform', 'rotate(-180deg)');
+			$('#sl1').css('-o-transform', 'rotate(-180deg)');
+			$('#sl1').css('-ms-transform', 'rotate(-180deg)');
+			
+        
+			$('#s2').css('-webkit-transform', 'rotate(-180deg)');
+			$('#s2').css('-moz-transform', 'rotate(-180deg)');
+			$('#s2').css('-o-transform', 'rotate(-180deg)');
+			$('#s2').css('-ms-transform', 'rotate(-180deg)');
+			$('#sl2').css('-webkit-transform', 'rotate(-180deg)');
+			$('#sl2').css('-moz-transform', 'rotate(-180deg)');
+			$('#sl2').css('-o-transform', 'rotate(-180deg)');
+			$('#sl2').css('-ms-transform', 'rotate(-180deg)');
+			
+			rotate3();
+		}
+		if(deg>540){
+			$('#s1').css('-webkit-transform', 'rotate(-180deg)');
+			$('#s1').css('-moz-transform', 'rotate(-180deg)');
+			$('#s1').css('-o-transform', 'rotate(-180deg)');
+			$('#s1').css('-ms-transform', 'rotate(-180deg)');
+			$('#sl1').css('-webkit-transform', 'rotate(-180deg)');
+			$('#sl1').css('-moz-transform', 'rotate(-180deg)');
+			$('#sl1').css('-o-transform', 'rotate(-180deg)');
+			$('#sl1').css('-ms-transform', 'rotate(-180deg)');
+			
+        
+			$('#s2').css('-webkit-transform', 'rotate(-180deg)');
+			$('#s2').css('-moz-transform', 'rotate(-180deg)');
+			$('#s2').css('-o-transform', 'rotate(-180deg)');
+			$('#s2').css('-ms-transform', 'rotate(-180deg)');
+			$('#sl2').css('-webkit-transform', 'rotate(-180deg)');
+			$('#sl2').css('-moz-transform', 'rotate(-180deg)');
+			$('#sl2').css('-o-transform', 'rotate(-180deg)');
+			$('#sl2').css('-ms-transform', 'rotate(-180deg)');
+			
+			$('#s3').css('-webkit-transform', 'rotate(-180deg)');
+			$('#s3').css('-moz-transform', 'rotate(-180deg)');
+			$('#s3').css('-o-transform', 'rotate(-180deg)');
+			$('#s3').css('-ms-transform', 'rotate(-180deg)');
+			$('#sl3').css('-webkit-transform', 'rotate(-180deg)');
+			$('#sl3').css('-moz-transform', 'rotate(-180deg)');
+			$('#sl3').css('-o-transform', 'rotate(-180deg)');
+			$('#sl3').css('-ms-transform', 'rotate(-180deg)');
+			
+		}
+		
+	});
+		function rotate1() {   
+		
+			$('#sl1').css('-webkit-transform', 'rotate('+degz+'deg)');
+			$('#sl1').css('-moz-transform', 'rotate('+degz+'deg)');
+			$('#sl1').css('-ms-transform', 'rotate('+degz+'deg)');
+			$('#sl1').css('-o-transform', 'rotate('+degz+'deg)');
+			$('#s1').css('-webkit-transform', 'rotate('+deg+'deg)');
+			$('#s1').css('-moz-transform', 'rotate('+deg+'deg)');
+			$('#s1').css('-ms-transform', 'rotate('+deg+'deg)');
+			$('#s1').css('-o-transform', 'rotate('+deg+'deg)');
+			
+		}
+			
+		function rotate2() {   
+			
+			$('#sl2').css('-webkit-transform', 'rotate('+degz2+'deg)');
+			$('#sl2').css('-moz-transform', 'rotate('+degz2+'deg)');
+			$('#sl2').css('-ms-transform', 'rotate('+degz2+'deg)');
+			$('#sl2').css('-o-transform', 'rotate('+degz2+'deg)');
+			$('#s2').css('-webkit-transform', 'rotate('+deg2+'deg)');
+			$('#s2').css('-moz-transform', 'rotate('+deg2+'deg)');
+			$('#s2').css('-ms-transform', 'rotate('+deg2+'deg)');
+			$('#s2').css('-o-transform', 'rotate('+deg2+'deg)');
+			
+		}
+			
+		function rotate3() {   
+			
+			$('#sl3').css('-webkit-transform', 'rotate('+degz3+'deg)');
+			$('#sl3').css('-moz-transform', 'rotate('+degz3+'deg)');
+			$('#sl3').css('-ms-transform', 'rotate('+degz3+'deg)');
+			$('#sl3').css('-o-transform', 'rotate('+degz3+'deg)');
+			$('#s3').css('-webkit-transform', 'rotate('+deg3+'deg)');
+			$('#s3').css('-moz-transform', 'rotate('+deg3+'deg)');
+			$('#s3').css('-ms-transform', 'rotate('+deg3+'deg)');
+			$('#s3').css('-o-transform', 'rotate('+deg3+'deg)');			
+		}
+});</script>
+	
+<!-- Generated by RunJS (Mon Jun 06 09:41:10 CST 2016) 1ms -->

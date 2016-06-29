@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+			#star-six{
+  width:0;height:0;border-left:50px solid transparent;
+  border-right:50px solid transparent;border-bottom:100px solid red;position: relative;}
+			#star-six:after{
+  width:0;height:0;border-left:50px solid transparent;border-right:50px solid transparent;
+  border-top:100px solid red;position: absolute;content:"";top:30px;left: -50px;}
+   /*a[href]:after{
+    content:" ("attr(href)") ";}*/
+    
+    .btn{ border: none; background-color:#077ACE; width: 100px;
+     height: 30px; color: #fff; position: relative;
+     z-index: 2;
+     overflow: hidden;
+     box-shadow: 5px 5px 2px #bbb;
+     
+     }
+    
+     .btn::before{ content: ''; 
+      width: 21px; height: 
+    21px; 
+    background-color: #D55200; 
+    left: -12px; top:
+     4px;
+    
+      position: absolute;
+      
+       -webkit-transform:rotate(-45deg); /* Safari and Chrome */
+-o-transform:rotate(-45deg); /* Opera */
+transform:rotate(-45deg);
+      
+      }
+      .btn::after{ content: ''; 
+      width: 50px; height: 
+    4px; 
+    background-color: yellow; 
+    top:
+     4px;right: 40;
+    
+      position: absolute;
+      
+       -webkit-transform:rotate(45deg); /* Safari and Chrome */
+-o-transform:rotate(45deg); /* Opera */
+transform:rotate(45deg);
+      
+      }
+      .btn:hover{ }
+    /*.btn::before{ position: absolute;top: 0px; left: 0px;
+     width: 100px; height: 20px; background-color: #077ACE;
+     z-index: 1; box-shadow: 5px 5px 2px #EB7324;content: '';
+     }*/
+    .btn1{ position: relative; width: 150px; height: 40px; 
+    border-radius: 20px; background-color: #000000; color: #fff; border: none;}
+   .btn1:before
+{
+	content: '';
+width:10px;
+height:10px;
+border-radius: 50%;
+background:#00CD00; border: 2px solid #E3E3E3;
+position:absolute;
+ top: 13px;
+  left: 25px;
+ 
+animation-name:myfirst;
+animation-duration:3s;
+animation-timing-function:linear;
+animation-delay:1s;
+animation-iteration-count:infinite;
+animation-direction:alternate;
+animation-play-state:running;
+/* Firefox: */
+-moz-animation-name:myfirst;
+-moz-animation-duration:3s;
+-moz-animation-timing-function:linear;
+-moz-animation-delay:1s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:alternate;
+-moz-animation-play-state:running;
+/* Safari and Chrome: */
+-webkit-animation-name:myfirst;
+-webkit-animation-duration:3s;
+-webkit-animation-timing-function:linear;
+-webkit-animation-delay:1s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:alternate;
+-webkit-animation-play-state:running;
+/* Opera: */
+-o-animation-name:myfirst;
+-o-animation-duration:3s;
+-o-animation-timing-function:linear;
+-o-animation-delay:1s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:alternate;
+-o-animation-play-state:running;
+}
+
+@keyframes myfirst
+{
+from {background:yellow;}
+to {background:#00CD00;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {background:yellow;}
+to {background:#00CD00;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:yellow;}
+to {background:#00CD00;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {background:yellow;}
+to {background:#00CD00;}
+}
+
+/***************************************
+ 
+ */
+.zhezhi{ position: relative; background: #FFFFFF; border: 1px solid #BBBBBB; width: 200px ; height: 40px; margin-left: 50px; z-index: 3;}
+.zhezhi::before,.zhezhi::after{ content: ''; border: none; position: absolute; top: 0px; width: 60px; 
+height: 40px; z-index: 2;  }
+.zhezhi::before{ left: 0px; box-shadow:-4px 6px 3px #E0E0E0 ;}
+.zhezhi::after{ right: 0px; box-shadow:4px 6px 3px #E0E0E0;}
+
+.lk1{  
+    position: relative;  
+    display: inline-block;  
+    outline: none;  
+    text-decoration: none;  
+    color: #000;  
+    font-size: 20px;  
+    padding: 5px 10px;  margin-left: 30px; 
+}  
+  
+.lk1:hover::before, .lk1:hover::after { position: absolute; }  
+.lk1:hover::before { content: "\5B"; left: -20px; }  
+.lk1:hover::after { content: "\5D"; right:  -20px; }  
+.lk2 {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	text-decoration: none;
+	color: #000;
+	font-size: 20px;
+	padding: 0 10px;
+}
+ 
+/* 大框 */
+.lk2:hover::before, .lk2:hover::after { 
+	content: "";
+	display: block;
+	position: absolute;
+	top: -15%%;
+	left: -14%%;
+	width: 120%;
+	height: 120%;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #DDD;
+ }
+
+/* 小框 */
+ .lk2:hover::after {
+ 	top: 0%;
+ 	left: 0%;
+	width: 100%;
+	height: 100%;
+	border-width: 2px;
+ }
+ .wait{ border: none; width: 200px; height: 40px; background: #eb7324; color: #fff; border-radius: 7px;}
+.wait:hover{background: #0066CC; color: #F3AB26; cursor: pointer;}
+ button{ margin-left: 20px;}
+ li{ list-style: none;}
+ .ul1 li::before{ content: 'Demo'; background: yellow;}
+ ol {
+	margin: 0;
+	padding: 0 0 0 2em;
+	list-style: none;
+	counter-reset: item;
+}
+ol li:before {
+	counter-increment: item;
+	content: counter(item)".";
+	color: #f00;
+}
+
+
+
+/*==================================================
+ * Effect 1
+ * ===============================================*/
+.effect1
+{
+    box-shadow: 0 10px 6px -6px #777;
+}
+.img_b{ margin-left: 25%; background-image: url(img/yz300.jpeg); width: 300px; height: 200px; position: relative; border: 6px solid #ddd; }
+.img_b::before {
+	content: "";
+	height: 200px; width: 300px;
+	background:url(img/yz300.jpeg);
+	border: 6px solid #ddd;
+	
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: -10px;
+	
+	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	-moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+	-o-transform: rotate(-7deg);
+	-ms-transform: rotate(-7deg);
+	transform: rotate(-7deg);
+}
+.img_b::after {
+	content: "";
+	height: 200px; width: 300px;
+	background:url(img/yz300.jpeg);
+	border: 6px solid #ddd;
+	position: absolute;
+	z-index: -1;
+	top: 5px;
+	left: 0px;
+	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	-moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	-webkit-transform: rotate(5deg);
+	-moz-transform: rotate(5deg);
+	-o-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	transform: rotate(5deg);
+}
+
+  .tit{  font-size:30px; color:Blue; cursor:pointer; position:relative; overflow:visible; z-index:1;}
+			   .tit:hover::before{ content:attr(tit_data); padding:2px; padding-left:5px; 
+			                       padding-right:5px; position:absolute; top:105%; 
+			                       z-index:3; color:#fff; background:#eb7324; border-radius:2px;
+			                       left:5%;
+			                         }
+			   .tit:hover::after{content:'';
+			                height:0px;
+                            width:0px;
+                            border-bottom:solid 18px #eb7324;
+                            border-left:solid 18px transparent;
+                            border-right:solid 18px transparent; 
+                             position:absolute; z-index:2;
+                             top:80%;
+                            left:5%;
+			                }
+		</style>
+		<link rel="stylesheet" href="icomoon (1)/demo-files/demo.css">
+    <link rel="stylesheet" href="icomoon (1)/style.css"></head>
+    <link rel="stylesheet" href="css/weiyusu.css"></head>
+	</head>
+	<body>
+		<ul class="ul1"><li></li>
+			<li>stylesheet</li>
+			<li>icomoon (1)</li>
+			<li>style.css</li>
+			<li>link</li>
+		</ul>
+		<br/><br/><br/><br/><br/><br/>
+		
+			<ol class="test">
+	<li>wd3ddXW
+		<ol>
+			<li>CWXWEDCEWC
+				<ol>
+					<li>CSCWEXX</li>
+					<li>XACFEWF</li>
+					<li>EWDCWECWDCW</li>
+				</ol>
+			</li>
+			<li>CWECDSCD</li>
+		</ol>
+	</li>
+	<li>CEWVCEWC</li>
+	<li>EBTHTRRVC</li>
+</ol>
+		
+		<br/><br/><br/><br/><br/><br/>
+		<!--<a class="lk1" href='qg101.com'>QG101</a>
+		<a class="lk1" href='qg101.com'>QG101</a>
+		<a class="lk1" href='qg101.com'>QG101</a>-->
+		<!--<a class="lk2" href='yujiangong.com'>YuJG</a>-->
+		<!--<div id=star-six></div>
+		<a href='http://www.baidu.com'>百度</a>
+		<a href='http://www.IFENG.com'>凤凰</a>-->
+		<br/><br/><br/><br/><br/><br/>
+		
+		 .t5{<br/>
+  margin:30px;<br/>
+  height:<span  style=' color:Blue; cursor:pointer;font-size:30px;' title='width=height=0px'>0px;</span><br/>
+  width:0px;<br/>
+  border-top:solid 200px red;<br/>
+  border-left:solid 200px rgba(0,0,0,0); <br/>
+  border-right:solid 200px <span class='tit' tit_data='background-color:transparent'>rgba(0,0,0,0)</span>; <br/>
+}
+		<br/><br/><br/><br/><br/><br/>
+		<button class="btn">Button</button>
+		<br/><br/><br/><br/><br/><br/>
+		<button class="btn1">呼吸灯</button>
+		<br/><br/><br/><br/><br/><br/>
+	<button class="wait icon-calendar ">今天待办事宜</button>
+		<br/><br/><br/><br/><br/><br/>
+		<!--<div class="container">
+		  <div class="box effect1">
+        <h3>Effect 1</h3>
+    </div>-->
+    <div class="box effect2">
+        <h3>Effect 2</h3>
+    </div>
+    <div class="box effect3">
+        <h3>Effect 3</h3>
+    </div>
+    <div class="box effect4">
+        <h3>Effect 4</h3>
+    </div>
+    <!--<div class="box effect5">
+        <h3>Effect 5</h3>
+    </div>
+    <div class="box effect6">
+        <h3>Effect 6</h3>
+    </div>
+    <div class="box effect7">
+        <h3>Effect 7</h3>
+    </div>
+    <div class="box effect8">
+        <h3>Effect 8</h3>
+    </div></div>-->
+		<br/><br/><br/><br/><br/><br/>
+		<div class="img_b"></div>
+		<br/><br/><br/><br/><br/><br/>
+		
+		
+		<br/><br/><br/><br/><br/><br/>
+		
+		
+		
+	</body>
+</html>

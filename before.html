@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+<style>
+			body{ padding: 20px;}
+			.xunlei{ overflow:visible; background: #eee;  position:relative; font-size: 36px; width: 220px; height: 76px; color: rgb(163,213,109); border-radius: 4px; border: 6px solid rgb(163,213,109); border-left-width: 76px; z-index:1; cursor:pointer;}
+			.xunlei::before 
+			{  content:''; 
+			   z-index:2;
+			    position:absolute;
+			    left:-57px;
+			     height:0px; 
+  width:0px;
+  border-left:solid 45px #eee;
+  border-top:solid 20px transparent; 
+  border-bottom:solid 20px transparent; 
+			    
+			    }
+			    .tit{  font-size:30px; color:Blue; cursor:pointer; position:relative; overflow:visible; z-index:1;}
+			   .tit:hover::before{ content:attr(tit_data); padding:2px; padding-left:5px; 
+			                       padding-right:5px; position:absolute; top:105%; 
+			                       z-index:3; color:#fff; background:#eb7324; border-radius:2px;
+			                       left:5%;
+			                         }
+			   .tit:hover::after{content:'';
+			                height:0px;
+                            width:0px;
+                            border-bottom:solid 18px #eb7324;
+                            border-left:solid 18px transparent;
+                            border-right:solid 18px transparent; 
+                             position:absolute; z-index:2;
+                             top:80%;
+                            left:5%;
+			                }
+		</style>
+	</head>
+	<body>
+		<button class="xunlei">PLAY</button>
+        <script type="text/javascript">
+            var buts = document.getElementsByTagName('button');
+            buts[0].onclick = function () { alert('请关好门窗。'); }
+        </script>
+
+        <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+        .t5{<br/>
+  margin:30px;<br/>
+  height:<span  style=' color:Blue; cursor:pointer;font-size:30px;' title='width=height=0px'>0px;</span><br/>
+  width:0px;<br/>
+  border-top:solid 200px red;<br/>
+  border-left:solid 200px rgba(0,0,0,0); <br/>
+  border-right:solid 200px <span class='tit' tit_data='background-color:transparent'>rgba(0,0,0,0)</span>; <br/>
+}<br/>
+	</body>
+</html>
+

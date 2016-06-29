@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    	<style type="text/css">
+    		.color{position: absolute; right: 30px; top: 30px; color: #eb7324; background-color: #000000; font-size:20px;}
+    		#particles-js{ background-position: 50% 50%; background-repeat: repeat; background-image: url(img/BLK78.png);}
+    	/**/
+    	
+    	</style>
+</head>
+<body>
+
+
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+<i class="color"></i>
+<!-- scripts -->
+<script src="js/jquery-1.11.3.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+
+<!-- stats.js -->
+<script src="js/lib/stats.js"></script>
+<script>
+//http://www.css88.com/jquery-ui-api/color-animation/index.html
+var sz=['rgb( 17, 63, 61 )','rgb( 60, 79, 57 )','rgb( 95, 92, 51 )','rgb( 36, 169, 225 )',
+'rgb( 179, 214, 110 )','rgb( 248, 147, 29 )','rgb( 0, 90, 171 )','rgb( 91, 74, 66 )',
+'rgb( 220, 162, 151 )','rgb( 78, 29, 76 )','rgb( 119, 52, 96 )','rgb( 151, 151, 151 )']
+var jsq=0;
+function ch_col(){
+	jsq++;
+	if(jsq>sz.length-1){jsq=0;}
+	$( "#particles-js" ).animate({
+    
+    backgroundColor: sz[jsq]
+  },3500,function(){
+  	$('.color').html(sz[jsq]);
+  	ch_col()
+  	
+  });
+	
+}
+window.onload=function(){ch_col();}
+</script>
+
+</body>
+</html>
