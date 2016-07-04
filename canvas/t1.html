@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		window.onload=function(){
+			var drawing = document.getElementById("d1");//确保完全支持<canvas>
+			if(drawing.getContext){var context = drawing.getContext("2d");
+    context.fillStyle ="#EEEEFF";
+    context.fillRect(0,0,200,200);//绘制一个红色的长方形
+    context.fillStyle ="#ff0000";
+    context.fillRect(10,10,50,50);//绘制一个半透明的蓝色长方形
+    context.fillStyle ="rgba(0, 0, 255, 0.5)";
+    context.fillRect(30,30,50,50);}
+			drawing = document.getElementById("d2");//确保完全支持<canvas>
+			if(drawing.getContext){var context = drawing.getContext("2d");//填充画布
+    context.fillStyle ="#EEEEFF";
+    context.fillRect(0,0,200,200);//绘制一个红色的长方形边框
+    context.strokeStyle ="#ff0000";
+    context.strokeRect(10,10,50,50);//绘制一个半透明的蓝色长方形边框
+    context.strokeStyle ="rgba(0, 0, 255, 0.5)";
+    context.strokeRect(20,30,50,50);}
+    drawing = document.getElementById("d3");//确保完全支持<canvas>
+    if(drawing.getContext){var context = drawing.getContext("2d");//填充画布
+    context.fillStyle ="#EEEEFF";
+    context.fillRect(0,0,200,200);//绘制一个红色的长方形
+    context.fillStyle ="#ff0000";
+    context.fillRect(10,10,50,50);//绘制一个半透明的蓝色长方形
+    context.fillStyle ="raba(0, 0, 255, 0.5)";
+    context.fillRect(30,30,50,50);//创建一个覆盖前面长方形的长方形
+    context.clearRect(40,40,10,10);}
+    drawing = document.getElementById("d4");//确保完全支持（canvas）
+    if(drawing.getContext){
+    var context = drawing.getContext("2d");
+    //填充画布
+    context.fillStyle ="#EEEEFF";
+    context.fillRect(0,0,200,200);
+    //路径开始
+    context.beginPath();
+    //绘制外圆
+    context.arc(100,100,99,0,2*Math.PI,false);
+    //绘制内圆
+    context.moveTo(194,100);
+    context.arc(100,100,94,0,2*Math.PI,false);
+    //绘制分针
+    context.moveTo(100,100);
+    context.lineTo(100,15);
+    //绘制时针
+    context.moveTo(100,100);
+    context.lineTo(35,100);
+    //路径描边
+    context.stroke();}
+    
+    drawing = document.getElementById("d5");//确保完全支持<canvas>
+    if(drawing.getContext){
+    var context = drawing.getContext("2d");
+    //填充画布
+    context.fillStyle ="#EEEEFF";
+    context.fillRect(0,0,200,200);
+    //路径开始
+    context.beginPath();
+    //绘制外圆
+    context.arc(100,100,99,0,2*Math.PI,false);
+    //绘制内圆
+    context.moveTo(194,100);
+    context.arc(100,100,94,0,2*Math.PI,false);
+    //转换到中心
+    context.translate(100,100);
+    //绘制分针
+    context.moveTo(0,0);
+    context.lineTo(0,-85);
+    //绘制时针
+    context.moveTo(0,0);
+    context.lineTo(-65,0);
+    //路径描边
+    context.stroke();}
+    drawing = document.getElementById("d6");//确保完全支持<canvas>
+    if(drawing.getContext){
+    var context = drawing.getContext("2d");
+    //路径开始
+    context.beginPath();
+    //绘制外圆
+    context.arc(100,100,99,0,2*Math.PI,false);
+    //绘制内圆
+    context.moveTo(194,100);
+    context.arc(100,100,94,0,2*Math.PI,false);
+    //转换到中心
+    context.translate(100,100);
+    //旋转指针
+    context.rotate(1);
+    //绘制分针
+    context.moveTo(0,0);
+    context.lineTo(0,-85);
+    //绘制时针
+    context.moveTo(0,0);
+    context.lineTo(-65,0);
+    //路径描边
+    context.stroke();}
+		drawing = document.getElementById("d7");//确保完全支持<canvas>
+		if(drawing.getContext){
+    var context = drawing.getContext("2d");
+    //填充画布
+    context.fillStyle ="#EEEEFF";
+    context.fillRect(0,0,200,200);
+
+    context.fillStyle ="#ff0000";
+    context.save();
+
+    context.fillStyle ="#00ff00";
+    context.translate(100,100);
+    context.save();
+
+    context.fillStyle ="#0000ff";
+    context.fillRect(0,0,100,200);//在（100，100）绘制一个蓝色的矩形
+    context.restore();
+    context.fillRect(10,10,100,200);//在（100， 100）处绘制一个绿色的矩形
+    context.restore();
+    context.fillRect(0,0,100,200);//在（0,0）处绘制一个红色的矩形
+    }
+		
+		
+		drawing = document.getElementById("d8");//确保完全支持<canvas>
+		if(drawing.getContext){
+    var context = drawing.getContext("2d");
+    //填充画布
+    context.fillStyle ="#EEEEFF";
+    context.fillRect(0,0,200,200);
+    //路径开始
+    context.beginPath();
+    //绘制外圆
+    context.arc(100,100,99,0,2*Math.PI,false);
+    //绘制内圆
+    context.moveTo(194,100);
+    context.arc(100,100,94,0,2*Math.PI,false);
+    //绘制分针
+    context.moveTo(100,100);
+    context.lineTo(100,15);
+    //绘制时针
+    context.moveTo(100,100);
+    context.lineTo(35,100);
+    //路径描边
+    context.stroke();
+    //绘制文本
+    context.font ="bold 10px Arial";
+    context.textAlign ="center";
+    context.textBaseline ="midddle";
+    context.fillText("12",100,18);}
+}
+		</script>
+		<div>
+			<canvas id="d1" width="200" height="200">A drawing of something.</canvas>
+			<canvas id="d2"width="200"height="200">A drawing of something.</canvas>
+			<canvas id="d3"width="200"height="200">A drawing of something.</canvas>
+			<canvas id="d4"width="200"height="200">A drawing of something.</canvas>
+			<canvas id="d5"width="200"height="200">A drawing of something.</canvas>
+			<canvas id="d6"width="200"height="200">A drawing of something.</canvas>
+			<canvas id="d7"width="200"height="200">A drawing of something.</canvas>
+			
+			<canvas id="d8"width="200"height="200">A drawing of something.</canvas>
+		</div>
+		
+	</head>
+	<body>
+	</body>
+</html>
